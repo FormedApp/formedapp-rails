@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Pack:
+  = @activity.pack_id
+p
+  strong Title:
+  = @activity.title
+p
+  strong Receive content:
+  = @activity.receive_content
+
+= link_to 'Edit', edit_activity_path(@activity)
+'|
+= link_to 'Back', activities_path

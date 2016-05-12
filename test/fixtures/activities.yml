@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pack_id: 1
+  title: MyString
+  receive_content: MyText
+
+two:
+  pack_id: 1
+  title: MyString
+  receive_content: MyText
