@@ -12,21 +12,15 @@ nav.navbar.navbar-default
       ul.nav.navbar-nav
 
       ul.nav.navbar-nav.navbar-right
-        / - if user_signed_in?
-        /   ul.nav.navbar-nav.navbar-right
-        /     li class="#{@menu_item == :assessments ? 'active' : ''}"
-        /       a href="#"
-        /         | Foo
-        /       / = link_to 'Timelapses', assessments_path
-        /     li
-        /       a href="#"
-        /         | Bar
-        /       / = link_to 'Log Out', destroy_user_session_path, method: :delete
-
-        li
-          = link_to 'Packs', packs_path
-        li
-          = link_to 'Activities', activities_path
-        / li
-        /   = link_to 'Log In', new_user_session_path
+        - if user_signed_in?
+          ul.nav.navbar-nav.navbar-right
+            li
+              = link_to 'Packs', packs_path
+            li
+              = link_to 'Activities', activities_path
+            li
+              = link_to 'Log Out', destroy_user_session_path, method: 'delete'
+        - else
+          li
+            = link_to 'Log In', new_user_session_path
 
