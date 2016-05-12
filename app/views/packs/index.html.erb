@@ -1,0 +1,24 @@
+<h1>Packs</h1>
+
+<table>
+  <tr>
+    <th>Pack</th>
+    <th></th>
+  </tr>
+
+  <% if @packs.empty? %>
+    <tr>
+      <td colspan=2>There aren't any packs yet.</td>
+    </tr>
+  <% end %>
+
+  <% @packs.each do |pack| %>
+    <tr>
+      <td><%= pack.title %></td>
+      <td><%= link_to edit_pack_path(pack) %>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "New Pack", new_pack_path %>
+
