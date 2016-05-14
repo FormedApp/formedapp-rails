@@ -6,13 +6,14 @@
         - @post.errors.full_messages.each do |message|
           li = message
 
-  .field
+  .form-group
     = f.label :message
-    = f.text_area :message
-  .field
+    = f.text_area :message, class: 'form-control'
+  .form-group
     = f.label :activity_id
-    = f.number_field :activity_id
-  .field
+    = f.select :activity_id, Activity.order(id: :asc).pluck(:title, :id), { include_blank: true }, { class: 'form-control' }
+  .form-group
     = f.label :user_id
-    = f.number_field :user_id
-  .actions = f.submit
+    = f.select :user_id, User.order(id: :asc).pluck(:email, :id), { include_blank: true }, { class: 'form-control' }
+  .actions
+    = f.submit "save", class: "btn btn-primary"
