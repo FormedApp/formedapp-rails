@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :activities
   resources :tracks
   resources :activities
+  resources :groups
   root 'tracks#index'
 end
 
