@@ -5,6 +5,7 @@ class ActivitiesController < ApplicationController
   # GET /activities.json
   def index
     @activities = Activity.all
+    
   end
 
   # GET /activities/1
@@ -69,6 +70,6 @@ class ActivitiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def activity_params
-      params.require(:activity).permit(:pack_id, :title, :receive_content)
+      params.require(:activity).permit(:track_id, :title, :receive_content)
     end
 end

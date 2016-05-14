@@ -1,16 +1,16 @@
-<h1>New Pack</h1>
+<h1>New Track</h1>
 
-<% if @pack.errors.any? %>
+<% if @track.errors.any? %>
   <div>
-    <h2><%= pluralize(@pack.errors.count, "error") %> prohibited this edit from being saved:</h2>
+    <h2><%= pluralize(@track.errors.count, "error") %> prohibited this edit from being saved:</h2>
     <ul>
-      <% @pack.errors.full_messages.each do |msg| %>
+      <% @track.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
 <% end %>
 
-<%= form_for(@pack) do |f| %>
+<%= form_for(@track) do |f| %>
   <div class="form-group">
     <label>Title</label>
     <%= f.text_field :title, class: 'form-control' %>

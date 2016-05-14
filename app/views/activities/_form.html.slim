@@ -7,8 +7,8 @@
           li = message
 
   .form-group
-    = f.label :pack_id
-    = f.select :pack_id, Pack.order(title: :asc).pluck(:title, :id), { include_blank: true }, { class: 'form-control' }
+    = f.label :track_id
+    = f.select :track_id, Track.order(title: :asc).pluck(:title, :id), { include_blank: true }, { class: 'form-control' }
   .form-group
     = f.label :title
     = f.text_field :title, class: 'form-control'

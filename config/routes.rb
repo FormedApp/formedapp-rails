@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   resources :posts
   devise_for :users
   resources :activities
-  resources :packs
+  resources :tracks
   resources :activities
-  root 'packs#index'
+  root 'tracks#index'
 end
 

@@ -3,7 +3,7 @@ h1 Listing activities
 table.table
   thead
     tr
-      th Pack
+      th Track
       th Title
       th Receive content
       th
@@ -13,7 +13,7 @@ table.table
   tbody
     - @activities.each do |activity|
       tr
-        td = activity.pack.title
+        td = activity.track.title
         td = activity.title
         td = activity.receive_content
         td = link_to 'Show', activity
