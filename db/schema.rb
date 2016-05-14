@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514153750) do
+ActiveRecord::Schema.define(version: 20160514163305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 20160514153750) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "groups", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.text     "message",     null: false
     t.integer  "activity_id"
@@ -34,6 +40,17 @@ ActiveRecord::Schema.define(version: 20160514153750) do
 
   add_index "posts", ["activity_id"], name: "index_posts_on_activity_id", using: :btree
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "roles", force: :cascade do |t|
+    t.integer  "group_id",   null: false
+    t.integer  "user_id",    null: false
+    t.integer  "role_type",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "roles", ["group_id"], name: "index_roles_on_group_id", using: :btree
+  add_index "roles", ["user_id"], name: "index_roles_on_user_id", using: :btree
 
   create_table "tracks", force: :cascade do |t|
     t.string   "title",      null: false
@@ -61,4 +78,6 @@ ActiveRecord::Schema.define(version: 20160514153750) do
 
   add_foreign_key "posts", "activities"
   add_foreign_key "posts", "users"
+  add_foreign_key "roles", "groups"
+  add_foreign_key "roles", "users"
 end
