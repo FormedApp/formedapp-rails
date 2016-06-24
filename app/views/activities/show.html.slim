@@ -7,8 +7,11 @@ p
   strong Title:
   = @activity.title
 p
-  strong Receive content:
+  strong Receive Content:
   = @activity.receive_content
+p
+  strong Reflect Content:
+  = @activity.reflect_content
 
 = link_to 'Edit', edit_activity_path(@activity)
 '|
