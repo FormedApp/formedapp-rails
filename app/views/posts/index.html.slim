@@ -1,4 +1,22 @@
-h1 Listing posts
+<div class="header">
+  <div class="container">
+    <img src="https://pixabay.com/static/uploads/photo/2012/04/12/12/29/post-it-29813_960_720.png" style="width:304px;height:228px;">
+    <h1>Posts</h1>
+  </div>
+</div>
+
+<div class="posts">
+  <div class="container">
+    <% @posts.each do |post| %> 
+      <div class="post"> 
+        <p class="message"><%= post.message %></p> 
+        <p class="time"><%= post.created_at %></p> 
+      </div> 
+    <% end %>
+    <%= link_to 'New Post', "posts/new" %>
+  </div>
+</div>
+
 
 table
   thead

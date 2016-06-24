@@ -1,0 +1,26 @@
+<h1>Posts</h1>
+ 
+<table>
+<% @posts.each do |post| %>
+  <div class="container">
+    <tr class="user_id">
+      <td><%= post.user_id %></td>
+    </tr>
+    <tr class="message">
+      <td><%= post.message %></td>
+    </tr>
+    <tr class="time">
+      <td><%= post.created_at %></td>
+    </tr>
+    <tr class="activity">
+      <td><%= post.activity_id %></td>
+    </tr>
+    <tr class="list_actions">
+      <td><%= link_to 'Edit', edit_post_path(post) %><br/></td>
+      <td><%= link_to 'Destroy', post, method: :delete, data: {:confirm => 'Are you sure?'} %></td>
+    </tr>
+  <% end %>
+  </div>
+</table>
+<br />
+<%= link_to 'New Post', new_post_path %>

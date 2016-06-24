@@ -4,6 +4,7 @@ class CreateActivities < ActiveRecord::Migration
       t.integer :pack_id
       t.string :title
       t.text :receive_content
+      t.text :reflect_content
 
       t.timestamps null: false
     end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :journals
+  resources :journals
   resources :posts
   devise_for :users
   resources :activities
