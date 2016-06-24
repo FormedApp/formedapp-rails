@@ -6,7 +6,7 @@ table.table
       th Track
       th Title
       th Receive Content
-      th
+      th Reflect Content
       th
       th
 
@@ -16,6 +16,7 @@ table.table
         td = activity.track.title
         td = activity.title
         td = activity.receive_content
+        td = activity.reflect_content
         td = link_to 'Show', activity
         td = link_to 'Edit', edit_activity_path(activity)
         td = link_to 'Destroy', activity, data: {:confirm => 'Are you sure?'}, :method => :delete
