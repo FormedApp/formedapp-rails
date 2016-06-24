@@ -6,6 +6,7 @@ class Activity < ActiveRecord::Base
   validates :title, presence: true, length: { minimum: 3, maximum: 255 }
   validates :receive_content, presence: true, length: { minimum: 3 }
   validates :reflect_content, presence: true, length: { minimum: 3 }
+  validates :respond_content, presence: true, length: { minimum: 3 }
 
 end
 
